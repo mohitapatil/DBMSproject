@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<h1>
+			User Profile
+		</h1>
+		<hr>
+		<h2>
+			My Orders
+		</h2>
+		<% orders.forEach(function(orders) { %>
+		<div class="panel panel-default">
+		  <div class="panel-body">
+			<ul class="list-group">
+				<% orders.items.forEach(function(items) { %>
+					<li class="list-group-item">
+					<span class="badge"> <%= items.price %> </span>
+					<%= items.item.name %> | <%= items.qty %>
+			 		</li>
+				<% }); %>
+			</ul>
+		  </div>
+			<div class="panel-footer"> Inr <%= orders.cart.totalPrice %> </div>
+		</div>
+		<% }); %>
+	
+	</div>
+</div>

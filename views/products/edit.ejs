@@ -1,0 +1,18 @@
+<%- include("../partials/header") %>
+
+<h1>
+	Edit tech
+</h1>
+
+<form action="/products/<%= product._id %>?_method=PUT" method="POST">
+	<input type="text" placeholder="name" name="product[name]" value="<%=product.name %>">
+	<input type="text" name="product[image]" value="<%=product.image %>">
+	<input type="text" name="product[description]" value="<%=product.description %>" >
+	
+
+	<button>
+		Submit
+	</button>
+</form>
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>store name</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- <link rel='stylesheet' href='../public/stylesheets/style.css'/> -->
+	<style>
+		h1 {text-align:center }
+		.thumbnail{
+			border: 1px solid #fff;
+		}
+		a.thumbnail:hover {
+    		border-color: #d9d9d9;
+		}
+		.navbar{
+			     border: 1px solid #fff;
+		}
+		.jumbotron {
+			background-image: url('https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+		}
+		body{
+			min-height:100%;
+		}
+		.navbar {
+			margin: 0;
+		}
+		</style>
+		
+	</head>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+
+	
+	<body>
+		<div class="navbar navbar-default">
+				<a class="navbar-brand" href="/">Store</a>
+		<ul class="nav nav-pills" style="float: right;">
+			<li role="presentation"><a href="/shopping-cart" style="color: black;">Shopping Cart</a></li>
+			<% if(!currentUser){ %>
+			<li role="presentation"><a href="/login" style="color: black;" >Login</a></li>
+			<li role="presentation"><a href="/register" style="color: black;">Register</a></li>
+			<% }else {%>
+			<li role="presentation" > <a href="/profile" style="color: black;"> Signed in as <%= currentUser.username %></a></li>
+			<li role="presentation" ><a href="/logout" style="color: black;">Logout</a></li>
+			<% } %>
+		</ul>	
+		</div>
+		
+		<h1>
+			<%= message %>
+		</h1>

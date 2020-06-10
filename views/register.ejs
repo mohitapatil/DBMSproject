@@ -1,0 +1,30 @@
+<%- include("partials/header") %>
+
+<div style="background-image:url('https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1948&q=80');">
+<div class="container login-form" style="width: 30%; margin: 1px 55%;">
+<h2 style="font-size: 80px;margin-top: 30%;">
+	Welcome to registration
+</h2>
+
+<form action="/register" method="post">
+		<div class="form-group">
+	<input class="form-control" type="text" name="username" placeholder="username" required>
+	</div>
+		<div class="form-group">
+	 <input class="form-control" type="text" name="email" placeholder="email" required>
+	</div>
+		<div class="form-group">
+	<input class="form-control" type="password" name="password" placeholder="password" required>
+	</div>
+		<div class="form-group">
+	<input class="form-control" type="text" name="adminCode" placeholder="adminCode">
+	</div>
+	<div class="form-group">
+	<button>
+		sign up
+	</button>
+	</div>
+</form>
+<a href="/login">Login</a>
+	<br><br><br><br><br><br><br>
+	</div></div>

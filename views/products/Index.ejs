@@ -1,0 +1,51 @@
+<%- include("../partials/header"); %>
+
+
+<header class="jumbotron container">
+	<div class="container" >
+	
+	<% if(currentUser && currentUser.isAdmin){ %>
+	<h1>
+		Welcome admin
+	</h1>
+		<br><br><br><br><br><br><br><br><br><br>
+	<p>
+	<a class="btn btn-primary btn-large" href="/products/new" style="text-align:center">Add products</a>	
+	</p>
+
+ <% } %>
+	<% if(!currentUser || !currentUser.isAdmin) { %>
+	<h1>
+	Lead with Speed
+	</h1>
+		<br><br><br><br><br><br><br><br><br><br>
+	<p>
+		Get the best deals on best products  
+	</p>
+	<% } %>	
+	</div>
+		
+</header>
+
+
+
+
+<br>
+<!-- style="display: flex; flex-wrap: wrap -->
+<div class="row" style="padding: 0% 5% 0% 5%;">
+<% products.forEach(function(products){ %>
+		<div class="col-xs-6" style="text-align:center">
+			<a href="/products/<%= products.id %>" class="thumbnail">
+			<img src= "<%= products.image %>">
+			</a>
+			<a href="/add-to-cart/<%= products.id %>">Add to shop cart</a>
+			<h3>
+			<%= products.name %>
+		</h3>
+		</div>
+	<br><br><br><br><br><br><br>
+
+<% }); %>
+</div>
+
+<%- include("../partials/footer"); %>
