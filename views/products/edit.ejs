@@ -1,18 +1,35 @@
 <%- include("../partials/header") %>
-
-<h1>
-	Edit tech
+<div style="background-image:url('https://www.desktopbackground.org/download/o/2011/01/11/140557_hi-tech-windows-wallpapers-computer-wallpapers_1920x1080_h.jpg');">
+<div class="container login-form" style="width: 30%; margin: 1px 55%;">
+<h1 style="font-size: 80px;margin-top: 30%;">
+	Edit Tech
 </h1>
 
 <form action="/products/<%= product._id %>?_method=PUT" method="POST">
-	<input type="text" placeholder="name" name="product[name]" value="<%=product.name %>">
-	<input type="text" name="product[image]" value="<%=product.image %>">
-	<input type="text" name="product[description]" value="<%=product.description %>" >
-	
-
-	<button>
+	<div class="form-group">
+	<input class="form-control" type="text" placeholder="name" name="product[name]" value="<%=product.name %>">
+	</div>
+	<div class="form-group">
+			<input class="form-control" type="number" name="product[price]" value="<%=product.price %>"  min ="1" step= "1">
+	</div>
+	<div class="form-group">
+	<input class="form-control" type="text" name="product[image]" value="<%=product.image %>">
+	</div>
+	<div class="form-group">
+		<input class="form-control" type="text" name="product[description]" value="<%=product.description %>" >
+	</div>
+	<div class="form-group">
+			<input class="form-control" type="number" name="product[quantity]" value="<%=product.quantity %>" min ="1" step= "1">
+	</div>
+	<div class="form-group">
+	<button class="btn btn-lg btn-default " >
 		Submit
 	</button>
+	</div>
 </form>
 
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+	
 <%- include("../partials/footer") %>

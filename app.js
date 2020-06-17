@@ -24,6 +24,7 @@ var productRoutes  = require("./routes/products");
 //console.log("database connecting");
 var indexRoutes    =require("./routes/index");
 
+// mongoose.connect("mongodb+srv://MohitPatil:QPWOE123@cluster0-8gr38.mongodb.net/DBMSproject?retryWrites=true&w=majority",{useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connect("mongodb://localhost:27017/Store",{useNewUrlParser: true, useUnifiedTopology: true });
 console.log("database connected");
 app.use(bodyParesr.urlencoded({extended: true}));

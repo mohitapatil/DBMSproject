@@ -78,7 +78,7 @@ router.delete("/products/:id/comments/:comment_id",checkCommentOwnership,functio
 			console.log("We have some error in deleting");
 			res.redirect("back");
 		} else{
-			res.redirect("/products" + req.params.id);
+			res.redirect("/products/" + req.params.id);
 		}
 	});
 });

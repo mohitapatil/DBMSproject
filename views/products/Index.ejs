@@ -1,25 +1,25 @@
 <%- include("../partials/header"); %>
 
 
-<header class="jumbotron container">
-	<div class="container" >
+<header class="jumbotron container" style="">
+	<div >
 	
 	<% if(currentUser && currentUser.isAdmin){ %>
-	<h1>
-		Welcome admin
+	<h1 style="color:pink">
+		Welcome Admin
 	</h1>
-		<br><br><br><br><br><br><br><br><br><br>
-	<p>
-	<a class="btn btn-primary btn-large" href="/products/new" style="text-align:center">Add products</a>	
-	</p>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<div class="center" style="margin: 0;position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+		<a class="btn btn-default btn-large" href="/products/new" style="text-align:center">Add products</a>	
+	</div>
 
  <% } %>
 	<% if(!currentUser || !currentUser.isAdmin) { %>
-	<h1>
+	<h1 style="color:pink">
 	Lead with Speed
 	</h1>
-		<br><br><br><br><br><br><br><br><br><br>
-	<p>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<p style="color:pink">
 		Get the best deals on best products  
 	</p>
 	<% } %>	
@@ -32,18 +32,17 @@
 
 <br>
 <!-- style="display: flex; flex-wrap: wrap -->
-<div class="row" style="padding: 0% 5% 0% 5%;">
+<div class="row" style="padding: 0% 5% 0% 5%;display: flex; flex-wrap: wrap ;">
 <% products.forEach(function(products){ %>
 		<div class="col-xs-6" style="text-align:center">
 			<a href="/products/<%= products.id %>" class="thumbnail">
 			<img src= "<%= products.image %>">
 			</a>
-			<a href="/add-to-cart/<%= products.id %>">Add to shop cart</a>
+			<a href="/add-to-cart/<%= products.id %>">Add to shopping cart</a>
 			<h3>
 			<%= products.name %>
 		</h3>
 		</div>
-	<br><br><br><br><br><br><br>
 
 <% }); %>
 </div>
