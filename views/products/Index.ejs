@@ -38,11 +38,7 @@
 			<a href="/products/<%= products.id %>" class="thumbnail">
 			<img src= "<%= products.image %>">
 			</a>
-			<% if(products.quantity >0){ %>
 			<a href="/add-to-cart/<%= products.id %>">Add to shopping cart</a>
-			<% }else{ %>
-			<a href="#">This product is sold out</a>
-			<% } %>
 			<h3>
 			<%= products.name %>
 		</h3>
