@@ -6,15 +6,15 @@
 		<ul class="list-group">
 			<% products.forEach(function(products){ %>
 				<li class="list-group-item">
-					<span class="badge"> <%= products.qty %></span>
-					<span class="label label-success"> <%= products.price %></span>
-					<strong> <%= products.item.name %></strong>
+					<span class="badge" style="font-size:20px;"> <%= products.qty %></span>
+					<strong  style="font-size:25px;"> <%= products.item.name %></strong>
+					<span class="label" style="font-size:20px;color:black;">Rs <%= products.price %></span>
 					<div class="dropdown">
-						<button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button>
-						<div class="dropdown-menu">
-							 <a class="dropdown-item" href="/reduce/<%= products.item._id %>">Reduce by 1</a>
-							 <a class="dropdown-item" href="/remove/<% products.item._id %>">Remove all</a>
-						</div>
+						<!-- <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action <span class="caret"></span></button> -->
+						<!-- <div class="dropdown-menu"> -->
+							 <a class="btn btn-primary" type="button" href="/reduce/<%= products.item._id %>">Reduce by 1</a>
+							 <a class="btn btn-primary" type="button" href="/remove/<% products.item._id %>">Remove all</a>
+						<!-- </div> -->
 					</div>
 				</li>
 	<% }) %>

@@ -5,7 +5,7 @@
 	<div >
 	
 	<% if(currentUser && currentUser.isAdmin){ %>
-	<h1 style="color:pink">
+	<h1 style="color:pink;font-size:100px;">
 		Welcome Admin
 	</h1>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -15,11 +15,11 @@
 
  <% } %>
 	<% if(!currentUser || !currentUser.isAdmin) { %>
-	<h1 style="color:pink">
+	<h1 style="color:pink;font-size:100px;">
 	Lead with Speed
 	</h1>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<p style="color:pink">
+	<p class="center" style="color:black;margin: 0;position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
 		Get the best deals on best products  
 	</p>
 	<% } %>	
@@ -38,7 +38,11 @@
 			<a href="/products/<%= products.id %>" class="thumbnail">
 			<img src= "<%= products.image %>">
 			</a>
+			<% if(products.quantity >0){ %>
 			<a href="/add-to-cart/<%= products.id %>">Add to shopping cart</a>
+			<% }else{ %>
+			<a href="#">This product is sold out</a>
+			<% } %>
 			<h3>
 			<%= products.name %>
 		</h3>

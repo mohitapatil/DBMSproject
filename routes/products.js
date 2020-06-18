@@ -20,9 +20,10 @@ router.post("/products",isLoggedIn,function(req,res){
 	var name=req.body.name;
 	var image= req.body.image;
 	var price= req.body.price;
+	var quantity= req.body.quantity;
 	var desc= req.body.description;
 	var type= req.body.type;
-	var newProduct = {name: name,image: image,price: price, description: desc,type: type}
+	var newProduct = {name: name,image: image,price: price, description: desc,type: type,quantity: quantity}
 	//Create new product and save to database
 	Product.create(newProduct,function(err,newlyCreated){
 		if(err){

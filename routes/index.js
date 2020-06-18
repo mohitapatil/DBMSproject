@@ -54,6 +54,7 @@ router.post("/login",passport.authenticate("local",
 
 router.get("/logout", function(req,res){
 	req.logout();
+	req.session.destroy();
 	res.redirect("/products");
 });
 
@@ -146,6 +147,17 @@ var stripe=require("stripe")("sk_test_51GqjnIK4s51wTJ1ClUHA9DZRtoyglY6pRdU0EBzkA
 			req.flash('error', err.message);
             return res.redirect('/');
         }
+		var item = cart.generateArray();
+		item.forEach(function(item){
+			item.item.quantity-= item.qty;
+			Product.findByIdAndUpdate(item.item.id, item.item.quantity,function(err,updateProduct){
+				if(err){
+					console.log("err");
+				}else{
+			console.log(item.qty , item.item.quantity);
+				}
+			});		
+		});
         var order = new Order({
             user: req.user,
             cart: cart,

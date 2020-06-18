@@ -19,7 +19,11 @@
 		</p>
 		
 		<div class="form-group">
-		<a class="btn btn-primary" href="/add-to-cart/<%= products._id %>" >add to cart</a>
+			<% if(products.quantity >0){ %>
+				<a class="btn btn-primary" href="/add-to-cart/<%= products._id %>" >add to cart</a>
+			<% }else{ %>
+			<a class="btn btn-primary" href="#">This product is sold out</a>
+			<% } %>
 		</div>
 		
 		<% if(currentUser && currentUser.isAdmin){ %>
