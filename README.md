@@ -1,5 +1,10 @@
 # DBMSproject
 
+An e-commerce website using nodejs and mongodb.
+After authentication users can add products to cart which is saved in sessions. This can be bought later, Stripe pament system is used. This transactions are added to users account.
+Authentication is also available for admin. Admin has extra rights to add, delete and update products.
+Comment section allows users to review individual products. Users later can update or delete their comments.
+
 Admin product page
 ![1](https://user-images.githubusercontent.com/47986636/106560940-e1327680-654d-11eb-9b99-243e7f9420eb.png)
 
